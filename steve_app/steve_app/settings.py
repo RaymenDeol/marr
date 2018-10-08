@@ -81,10 +81,12 @@ WSGI_APPLICATION = 'steve_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-		'read_default_file': '/etc/mysql/my.cnf',
-	},
-    }
+        'NAME': 'resources',
+        'USER': 'dev',
+        'PASSWORD': '1618Rd2123',
+        'HOST': 'localhost',
+        'PORT': '',
+	}
 }
 
 
@@ -126,5 +128,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_URL = '/resource_library/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'resource_library/media/')
 
 LOGIN_REDIRECT_URL = '/resource_library/user_home'

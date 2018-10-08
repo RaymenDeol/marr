@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import link
+from .models import user_picture
 from django.template import loader, Context
 from django.contrib.auth.decorators import login_required
-
+from django.template import RequestContext
 
 
 
@@ -27,4 +28,8 @@ def website_links(request):
 		websites[name] = website_id.url
 	return render(request, 'user_links.html', {'websites':websites})
 
+@login_required
+def user_pictures(request):
+    pictures = user_picture.objects.all()
+    return render(request, 'user_pictures.html', {'pictures': pictures})
 
