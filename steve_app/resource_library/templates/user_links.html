@@ -1,13 +1,17 @@
-<html>
+{% extends 'base.html' %}
+{% load static %}
 
 
-<body>
+{% block content %}
+
+
+
+<p>
 
 	{% for key, values in websites.items %}
 		{{values}}
 	{% endfor %}
 
-</body>
+<p>
 
-
-</html>
+{% endblock %}
